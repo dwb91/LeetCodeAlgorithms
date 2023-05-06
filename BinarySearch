@@ -3,12 +3,22 @@
 
 int firstBadVersion(int n) {
 
+    //set left to 1 and right to n
+
     int left = 1;
     int right = n;
 
+    //while left is less than right we go through n
+
     while(left < right){
 
+        // define the middle of n 
+
         int mid = left + (right - left) / 2;
+
+        //call the API isBadVersion(mid) to determine whether 
+        // the midpoint version is bad or not. If it is bad, 
+        //we know that all versions from mid to n are bad
 
         if(isBadVersion(mid))
         {
