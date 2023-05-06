@@ -1,0 +1,33 @@
+int searchInsert(int* nums, int numsSize, int target){
+
+    // Loop through nums array to see if target exists and return index if it does
+     for(int i=0; i<numsSize; i++)
+    {
+        if(nums[i] == target){
+            return i;
+        }
+        
+
+    }   
+
+    int insertPos = 0;
+
+    //If target not found, loop through nums array again to find number larger than target
+    for(int j=0; j < numsSize; j++)
+    {
+        // If number in array is larger than target
+        if(nums[j] > target){
+
+        //find index where target would be
+        insertPos = j;
+        return insertPos;
+        }
+
+    }
+
+    //If no number larger than the target is found, return size of array as max index
+    return numsSize;
+
+
+
+}
